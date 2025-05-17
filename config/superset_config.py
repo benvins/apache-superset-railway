@@ -14,7 +14,7 @@ SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE")
 # OAuth Configuration
 AUTH_TYPE = AUTH_OAUTH
 AUTH_USER_REGISTRATION = True  # Set to True to allow users to self-register
-AUTH_USER_REGISTRATION_ROLE = "Public"  # Default role for new users
+AUTH_USER_REGISTRATION_ROLE = "Admin"  # Default role for new users
 
 OAUTH_PROVIDERS = [
     {

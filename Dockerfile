@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install mysqlclient psycopg2 authlib
 
-ENV ADMIN_USERNAME $ADMIN_USERNAME
-ENV ADMIN_EMAIL $ADMIN_EMAIL
-ENV ADMIN_PASSWORD $ADMIN_PASSWORD
 ENV DATABASE $DATABASE
 
 COPY /config/superset_init.sh ./superset_init.sh
@@ -22,6 +19,8 @@ RUN chmod +x ./superset_init.sh
 COPY /config/superset_config.py /app/
 ENV SUPERSET_CONFIG_PATH /app/superset_config.py
 ENV SECRET_KEY $SECRET_KEY
+ENV GOOGLE_CLIENT_ID $GOOGLE_CLIENT_ID
+ENV GOOGLE_SECRET $GOOGLE_SECRET
 
 USER superset
 
